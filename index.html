@@ -1,44 +1,186 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Kongres studenata tehnike </title>
-        <link rel="stylesheet" href="./css/index.css">
-    </head>
-    <body>
-        <header>
-            <nav class="nav">
-                <a class="activelink" href="#">Pocetna</a>
-                <a class="" href="#"> O nama</a>
-                <a class="" href="#"> Kongres 2016</a>
-                <a class="" href="#"> <span class="sign-up">Prijavi se !</span></a>
-            </nav>
+	<title>KST</title>
 
-            <div class="container-header">
-                <div class="kst-info">
-                    <div class="logo">
-                        <img src="./img/logokst.png">
-                    </div>
-                    <div class="logo-text">
-                        <h2>Kongres studenata tehnike</h2>
-                        <p>
-                             Studenti tehnickih fakulteta iz zemlje i regiona imace priliku da se upoznaju sa
-                             dostignucimo i inovacijama u oblasti
-                             iskoriscenja energije i ocuvanja zivotne sredine
-                        </p>
-                    </div>
-                    <div class="btn-sign-up">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/normalize.css">
+</head>
+<body>
+<div class="container-body">
+	<header id="particles-js">
+		<div class="nav-icon">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<nav class="side-nav">
+			<div class="menu-items">
+				<a href="#">Pocetna</a>
+				<a href="#about">O nama</a>
+				<a href="#gallery">KST2016</a>
+				<a href="#sign-up">
+					<span class="menu-item-btn">
+						Prijavi se!
+					</span>	
+				</a>
+			</div>
+		</nav>
+
+		<div class="logo"></div>
+		<div class="container-info">
+			<div class="container-info-header">
+				<h2>KST2017</h2>
+			</div>
+			<div class="timer">
+				<span class="days"></span>
+				<span class="hours"></span>
+				<span class="mins"></span>
+				<span class="sec"></span>
+			</div>
+			<div class="container-info-footer">
+				<div class="btn-sign-up">
                         <span class="btn">
                            <p> Prijavi se ! <p>
                         </span>
                     </div>
-                    
-                </div>
-            </div>
-        </header>
+			</div>
+		</div>
+	</header>
+	<section id="about">
+	<div class="arr"></div>
+		<div class="content-about">
+			<div class="about-header">O nama</div>
+			<div class="about-content">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+			<div class="about-footer">
+				
+			</div>
+		</div>
+		<div class="map"></div>
+	</section>
+	<section id="gallery">
+		<div class="content-gallery-text">
+			<div class="about-gallery-header">KST2016</div>
+			<div class="about-gallery-txt">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+		<div class="content-gallery">
+			<div class="row">
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+			</div>
+			<div class="row">
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+			</div>
+			<div class="row">
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+				<div class="item">
+					<img src="./img/kst/1.jpg">
+				</div>
+			</div>
+		</div>
+	</section>
 
-    </body>
+	<section id="sign-up">
+		<div class="sign-up-content">
+			<div class="sign-up-header">Prijavi se</div>
+			<div class="sign-up-group">
+				<div class="group-inputs">
+					<input id="firstName" type="text" required/>
+      				<span class="highlight"></span>
+      				<span class="bar"></span>
+     				 <label for="firstName">Ime</label>
+				</div>
+				<div class="group-inputs">
+					<input id="lastName" type="text" required/>
+      				<span class="highlight"></span>
+      				<span class="bar"></span>
+     				<label for="lastName">Prezime</label>
+				</div>
+				<div class="group-inputs">
+					<input id="fax" type="text" required/>
+      				<span class="highlight"></span>
+      				<span class="bar"></span>
+     				<label for="fax">Fakultet</label>
+				</div>
+				<div class="group-inputs">
+					<input id="mail" type="text" required/>
+      				<span class="highlight"></span>
+      				<span class="bar"></span>
+     				<label for="mail">E-mail</label>
+				</div>
+				<div class="group-inputs">
+					<input id="phoneNumber" type="text" required/>
+      				<span class="highlight"></span>
+      				<span class="bar"></span>
+     				<label for="phoneNumber">Broj telefona</label>
+				</div>
+				<div class="button">
+					<span class="button-submit">
+						Posalji
+					</span>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXxsKTeispnjrGhNPEfk3dF5VP214dqg&"></script>
+  <script src="./js/particles.js"></script>
+  <script src="./js/app.js"></script>
+</body>
 </html>
