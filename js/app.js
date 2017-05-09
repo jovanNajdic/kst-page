@@ -14,15 +14,29 @@ function formValidation() {
     var $fax = $('#fax').val();
     var $mail = $('#mail').val();
     var $tel = $('#phoneNumber').val();
+
+    $signup = $('.sign-up-group');
+    $signupAll = $('#sign-up');
     
     var str = /[a-zA-Z]+/;
-    var eMail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/;
+    var eMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var space =  /^$/; 
 
-    console.log(str.test($ime));
-    console.log(str.test($prezime));
-    console.log(str.test($fax));
-    console.log(eMail.test($mail));
+
+    // console.log(str.test($ime));
+    // console.log(str.test($prezime));
+    // console.log(str.test($fax));
+    // console.log(eMail.test($mail));
+
+    if (str.test($ime) && str.test($prezime) && str.test($fax) && eMail.test($mail)) {
+        alert("Uspesno ste se prijavili pod imenom: " + $ime + " " + $prezime);
+        $signupAll.fadeOut(350);
+    }else {
+        $signup.addClass('failed');
+        setTimeout(function(){
+            $signup.removeClass('failed');
+        },1100);
+    }
 
 }
 
@@ -49,7 +63,6 @@ function menu () {
         }
 
     });
-    console.log(nClick);
 }
 
 
@@ -62,22 +75,21 @@ function timer() {
     if (tillNext <= 0) {
         $('.timer').hide();
     }else {
-        //d-dan
-        //h-sat
-        //m-min
-        //s-sec
+       
         var d = Math.floor(tillNext / (1000*60*60*24));
         var h = Math.floor( tillNext % ((1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         var m = Math.floor((tillNext % (1000 * 60 * 60)) / (1000 * 60));
         var s = Math.floor((tillNext % (1000 * 60)) / 1000);
 
-        $('.timer .days').html('<p> dana </p>'+d);
-        $('.timer .hours').html('<p> sati </p>'+h);
+        $('.timer .days').html('<p> dana </p>' +d);
+        $('.timer .hours').html('<p> sati </p>' +h);
         $('.timer .mins').html('<p> minuta </p>' +m);
-        $('.timer .sec').html('<p> sekundi </p>' + s);
+        $('.timer .sec').html('<p> sekundi </p>' +s);
     }
 }
 
+
+//***MAP***//
 
 var map = null;
 
@@ -228,6 +240,7 @@ function initMap() {
 
 }
 
+//***MAP END***//
 
 
 
