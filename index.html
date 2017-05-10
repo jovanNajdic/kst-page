@@ -23,7 +23,7 @@
 		</div>
 		<nav class="side-nav">
 			<div class="menu-items">
-				<a href="#">Pocetna</a>
+				<a href="#particles-js">Pocetna</a>
 				<a href="#about">O nama</a>
 				<a href="#gallery">KST2016</a>
 				<a href="#sign-up">
@@ -86,48 +86,74 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
 		</div>
+		<div class="gallery-menu" id="filters">
+            <ul>
+                <li class="active-gallery-menu">
+                	<span data-filter="*">Svi</span>
+                </li>
+                <li>
+                	<span data-filter="kongres2013">2013</span>
+                </li>
+                <li>
+                	<span data-filter="kongres2014" >2014</span>
+                </li>
+                <li>
+                	<span data-filter="kongres2015">2015</span>
+                </li>
+                <li>
+                	<span data-filter="kongres2016">2016</span>
+                </li>
+                <li>
+                	<span data-filter="kongres2017">2017</span>
+                </li>
+            </ul>
+        </div>
 		<div class="content-gallery">
+
 			<div class="row">
-				<div class="item">
+				<div class="item kongres2013 filter-item">
 					<img src="./img/kst/1.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2014 filter-item">
+					<img src="./img/kst/2.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2016 filter-item">
+					<img src="./img/kst/3.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2013 filter-item">
+					<img src="./img/kst/4.jpg">
 				</div>
 			</div>
 			<div class="row">
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2013 filter-item">
+					<img src="./img/kst/5.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2014 filter-item">
+					<img src="./img/kst/6.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2014 filter-item">
+					<img src="./img/kst/7.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2015 filter-item">
+					<img src="./img/kst/12.jpg">
 				</div>
 			</div>
 			<div class="row">
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2017 filter-item">
+					<img src="./img/kst/9.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2017 filter-item">
+					<img src="./img/kst/10.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2017 filter-item">
+					<img src="./img/kst/11.jpg">
 				</div>
-				<div class="item">
-					<img src="./img/kst/1.jpg">
+				<div class="item kongres2017 filter-item">
+					<img src="./img/kst/8.jpg">
 				</div>
+			</div>
+
+			<div class="popup">
 			</div>
 		</div>
 	</section>
@@ -136,18 +162,18 @@
 		<div class="sign-up-content">
 			<div class="sign-up-header">Prijavi se</div>
 			<div class="sign-up-group">
-				<div class="group-inputs">
-					<input id="firstName" type="text" required/>
-      				<span class="highlight"></span>
-      				<span class="bar"></span>
-     				 <label for="firstName">Ime*</label>
-				</div>
-				<div class="group-inputs">
-					<input id="lastName" type="text" required/>
-      				<span class="highlight"></span>
-      				<span class="bar"></span>
-     				<label for="lastName">Prezime*</label>
-				</div>
+					<div class="group-inputs">
+						<input id="firstName" type="text" required/>
+	      				<span class="highlight"></span>
+	      				<span class="bar"></span>
+	     				 <label for="firstName">Ime*</label>
+					</div>
+					<div class="group-inputs">
+						<input id="lastName" type="text" required/>
+	      				<span class="highlight"></span>
+	      				<span class="bar"></span>
+	     				<label for="lastName">Prezime*</label>
+					</div>
 				<div class="group-inputs">
 					<input id="fax" type="text" required/>
       				<span class="highlight"></span>
@@ -160,23 +186,28 @@
       				<span class="bar"></span>
      				<label for="mail">E-mail*</label>
 				</div>
-				<div class="group-inputs">
-					<input id="phoneNumber" type="text" required/>
-      				<span class="highlight"></span>
-      				<span class="bar"></span>
-     				<label for="phoneNumber">Broj telefona</label>
-				</div>
 				<div class="button">
 					<span class="button-submit">
 						Posalji
 					</span>
 				</div>
 				<div class="sign-up-footer">
-					<small style="color: rgba(255,255,255, .3);">Polja oznacena * su obavezna</small>
+					<small style="color: rgba(255,255,255, .3);
+					text-decoration: underline;">
+					Polja oznacena sa * su obavezna</small>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<section id="sponsors">
+		
+	</section>
+	<div class="to-top">
+	<a href="#particles-js">
+		<img src="./img/toparrow.png">
+	</a>
+	</div>
 </div>
 
 
@@ -187,8 +218,13 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous">
   </script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXxsKTeispnjrGhNPEfk3dF5VP214dqg&"></script>
   <script src="./js/particles.js"></script>
   <script src="./js/app.js"></script>
 </body>
 </html>
+
