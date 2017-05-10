@@ -1531,11 +1531,11 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
         window.particlesJS(tag_id, params);
         if(callback) callback();
       }else{
-        console.log('Error pJS - XMLHttpRequest status: '+xhr.status);
-        console.log('Error pJS - File config not found');
+        //console.log('Error pJS - XMLHttpRequest status: '+xhr.status);
+        //console.log('Error pJS - File config not found');
       }
     }
   };
-  xhr.send();
+  //xhr.send();
 
 };

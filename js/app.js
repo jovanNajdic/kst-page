@@ -1,19 +1,74 @@
+
 $(document).ready(function(){
     menu();
+    popup();
+    offsetTop(); 
     setInterval(timer,1000);
-
     $('.button').on('click', function(){
       formValidation();
-    });
+    });   
+    scrolling();
+    kstFilter();  
 });
 
+function scrolling() {
+    $('a[href^="#"]').on('click', function() {
+        $('.container-body').stop().animate({
+            scrollTop: $(this.hash).offset().top
+        },1020);
+    })
+}
+
+function offsetTop(){
+    $('.container-body').scroll(function() {
+            var gOffset = $('#gallery').offset().top;
+            if (gOffset < 800){
+                $('.to-top').fadeIn(400);
+            }else{
+                $('.to-top').fadeOut(350);
+            }
+
+            //fix for mobile
+            // if(gOffset < -500) {
+            //     $('.filter-item').addClass('filtered');
+            // }
+
+    });
+}
+
+function kstFilter() {
+
+    $('.filter-item').addClass('filtered');
+
+
+    $('#filters span').on('click', function(e){
+        e.preventDefault();
+        $(this).parent().addClass('act').siblings().removeClass('act');
+        var filteredItems = [];
+        var dFilter = $(this).attr('data-filter');
+
+        filteredItems.length = 0;
+        $('.filter-item').addClass('filtered');
+
+        if (dFilter == '*') {
+            $('.filter-item').removeClass('filtered');
+        }else {
+            filteredItems.push($('.filter-item').filter('.'+dFilter));
+            if(filteredItems[0].length > 0){
+                for(var i=0; i < filteredItems[0].length; i++){
+                    $(filteredItems[0][i]).removeClass('filtered');
+                }
+            }
+        }
+    })
+
+}
 
 function formValidation() {
     var $ime = $('#firstName').val();
     var $prezime = $('#lastName').val();
     var $fax = $('#fax').val();
     var $mail = $('#mail').val();
-    var $tel = $('#phoneNumber').val();
 
     $signup = $('.sign-up-group');
     $signupAll = $('#sign-up');
@@ -22,43 +77,54 @@ function formValidation() {
     var eMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var space =  /^$/; 
 
+    if(!str.test($ime)) {
+        $('#firstName').val('');
+    }
 
-    // console.log(str.test($ime));
-    // console.log(str.test($prezime));
-    // console.log(str.test($fax));
-    // console.log(eMail.test($mail));
+    if(!str.test($prezime)) {
+        $('#lastName').val('');
+    }
+
+    if(!str.test($fax)) {
+        $('#fax').val('');
+    }
+
+    if(!eMail.test($mail)) {
+        $('#mail').val('');
+    }
 
     if (str.test($ime) && str.test($prezime) && str.test($fax) && eMail.test($mail)) {
-        alert("Uspesno ste se prijavili pod imenom: " + $ime + " " + $prezime);
-        $signupAll.fadeOut(350);
+        alert("Uspesno ste se prijavili kao: " + $ime + " " + $prezime);
+        $signupAll.fadeOut(650);
     }else {
-        $signup.addClass('failed');
+        $signupAll.addClass('failed');
         setTimeout(function(){
-            $signup.removeClass('failed');
+            $signupAll.removeClass('failed');
         },1100);
     }
 
 }
 
 function menu () {
-    var nClick = 0;
+    var active = false;
 
     $('.nav-icon').on('click',function(){
-        nClick += 1;
+        active = !(active);
         $('.side-nav').css('right','0');
         $(this).addClass('active');
 
-        if (nClick % 2 === 0) {
+
+        if (!active) {
             $('.side-nav').css('right','-200%');
             $(this).removeClass('active');
         }
 
         if ($(this).hasClass('active')){
-            $('.menu-items > a').on('click', function(){
+            $('.menu-items a').on('click', function(e){
+                e.preventDefault();
             	$('.nav-icon').removeClass('active');
                 $('.side-nav').css('right','-200%');
-                nClick -= 1;
-
+                active = false;
             });
         }
 
@@ -87,6 +153,28 @@ function timer() {
         $('.timer .sec').html('<p> sekundi </p>' +s);
     }
 }
+
+
+function popup() {
+    var $image = $('.row img');
+    var $popup = $('.popup');
+
+
+    $image.on('click', function(e){
+        $popup.css('display','block');
+        console.log(e.target.src);
+         $popup.append('<img src='+e.target.src+' class="popup-content" >');
+        setTimeout(function(){
+            $popup.fadeOut(600, function(){
+                $(this).children('img').remove();
+            });
+
+        },2500);
+        
+    });
+}
+
+
 
 
 //***MAP***//
@@ -246,9 +334,7 @@ function initMap() {
 
 //***PARTICLES ***//
 
-particlesJS.load('particles-js', function() {
-        console.log('callback - particles.js config loaded');
-});
+particlesJS.load('particles-js');
 
 particlesJS("particles-js", {
   "particles": {
