@@ -76,6 +76,27 @@ header .side-nav .menu-items a {
     margin: 15px;
 }
 
+.side-nav .menu-items .socials {
+    text-align: center;
+    display: block;
+}
+
+.socials a:nth-child(1) {
+    margin-left: 25px !important;
+}
+
+.socials a:nth-child(2) {
+    margin-left: 45px !important;
+}
+
+.socials a:nth-child(3) {
+    margin-left: 35px !important;
+}
+
+.menu-items .socials a {
+    display: inline-block !important;
+}
+
 .side-nav .menu-items a:hover {
     cursor: pointer;
     color: #2ECC71 !important;

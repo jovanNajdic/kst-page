@@ -34,7 +34,6 @@ function kstFilter() {
 
     $('.filter-item').addClass('filtered');
 
-
     $('#filters span').on('click', function(e){
         e.preventDefault();
         $(this).parent().addClass('act').siblings().removeClass('act');
@@ -125,7 +124,6 @@ function menu () {
     });
 }
 
-
 function timer() {
     var date = new Date().getTime();
     var finalDate = new Date('Sep 11, 2017 12:00:00').getTime();
@@ -147,7 +145,6 @@ function timer() {
         $('.timer .sec').html('<p> sekundi </p>' +s);
     }
 }
-
 
 function popup() {
     var $image = $('.row img');
