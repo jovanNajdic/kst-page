@@ -185,7 +185,7 @@ google.maps.event.addDomListener(window, 'resize', function() {
 
 function initMap() {
 
-
+    var infowindow = new google.maps.InfoWindow();
     var mapDOM = document.querySelector('.map');
     var mapOPT = {
         zoom: 16,
@@ -315,6 +315,11 @@ function initMap() {
         position: PositionMarker,
         map: map,
         icon: marker
+    });
+
+    google.maps.event.addListener(Marker, 'click', function() {
+        infowindow.setContent('<p style="color: #333">Kraljice Marije 16</p><p style="color: #333; text-align: center;">Beograd,Palilula</p>');
+        infowindow.open(map,Marker);
     });
 
 }
