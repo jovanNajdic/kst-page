@@ -676,6 +676,53 @@ section#our-team {
     letter-spacing: 4px;
 }
 
+#our-team .our-team-row {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+#our-team .our-team-row .row-member {
+    width: 275px;
+    height: 400px;
+    text-align: center;
+    padding: 15px;
+    display: inline-block;
+    transition: all .3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.our-team-row .row-member img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(90%);
+}
+
+.our-team-row .row-member .member-info {
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    left: 15px;
+    width: 90%  ;
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(51, 51, 51, 0.8) 79%, rgba(51, 51, 51, 0.99) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(51, 51, 51, 0.8) 79%, rgba(51, 51, 51, 0.99) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(51, 51, 51, 0.8) 79%, rgba(51, 51, 51, 0.99) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(51, 51, 51, 0.8) 79%, rgba(51, 51, 51, 0.99) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(51, 51, 51, 0.8) 79%, rgba(51, 51, 51, 0.99) 100%);
+}
+
+.row-member .member-info .member--info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.member-info .member--info p {
+    font-weight: 300;
+    padding: 5px;
+}
 
 .to-top {
     display: none;
