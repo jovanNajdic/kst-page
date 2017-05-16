@@ -2,13 +2,13 @@
 $(document).ready(function(){
     menu();
     popup();
-    offsetTop(); 
+    offsetTop();
     setInterval(timer,1000);
     $('.button').on('click', function(){
       formValidation();
-    });   
+    });
     scrolling();
-    kstFilter();  
+    kstFilter();
 });
 
 function scrolling() {
@@ -21,18 +21,12 @@ function scrolling() {
 
 function offsetTop(){
     $('.container-body').scroll(function() {
-            var gOffset = $('#gallery').offset().top;
-            if (gOffset < 800){
-                $('.to-top').fadeIn(400);
-            }else{
-                $('.to-top').fadeOut(350);
-            }
-
-            //fix for mobile
-            // if(gOffset < -500) {
-            //     $('.filter-item').addClass('filtered');
-            // }
-
+        var gOffset = $('#gallery').offset().top;
+        if (gOffset < 800){
+            $('.to-top').fadeIn(400);
+        }else{
+            $('.to-top').fadeOut(350);
+        }
     });
 }
 
@@ -57,11 +51,11 @@ function kstFilter() {
             if(filteredItems[0].length > 0){
                 for(var i=0; i < filteredItems[0].length; i++){
                     $(filteredItems[0][i]).removeClass('filtered');
+                    $(filteredItems[0][i]).css('transition','all .3s ease');
                 }
             }
         }
     })
-
 }
 
 function formValidation() {
@@ -72,10 +66,10 @@ function formValidation() {
 
     $signup = $('.sign-up-group');
     $signupAll = $('#sign-up');
-    
+
     var str = /[a-zA-Z]+/;
     var eMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var space =  /^$/; 
+    var space =  /^$/;
 
     if(!str.test($ime)) {
         $('#firstName').val('');
@@ -97,9 +91,9 @@ function formValidation() {
         alert("Uspesno ste se prijavili kao: " + $ime + " " + $prezime);
         $signupAll.fadeOut(650);
     }else {
-        $signupAll.addClass('failed');
+        $('body').addClass('failed');
         setTimeout(function(){
-            $signupAll.removeClass('failed');
+            $('body').removeClass('failed');
         },1100);
     }
 
@@ -141,7 +135,7 @@ function timer() {
     if (tillNext <= 0) {
         $('.timer').hide();
     }else {
-       
+
         var d = Math.floor(tillNext / (1000*60*60*24));
         var h = Math.floor( tillNext % ((1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         var m = Math.floor((tillNext % (1000 * 60 * 60)) / (1000 * 60));
@@ -170,7 +164,7 @@ function popup() {
             });
 
         },2500);
-        
+
     });
 }
 
