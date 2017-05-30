@@ -31,18 +31,14 @@ function offsetTop(){
 }
 
 function kstFilter() {
-
     $('.filter-item').addClass('filtered');
-
     $('#filters span').on('click', function(e){
         e.preventDefault();
         $(this).parent().addClass('act').siblings().removeClass('act');
         var filteredItems = [];
         var dFilter = $(this).attr('data-filter');
-
         filteredItems.length = 0;
         $('.filter-item').addClass('filtered');
-
         if (dFilter == '*') {
             $('.filter-item').removeClass('filtered');
         }else {
@@ -62,13 +58,12 @@ function formValidation() {
     var $prezime = $('#lastName').val();
     var $fax = $('#fax').val();
     var $mail = $('#mail').val();
-
-    $signup = $('.sign-up-group');
-    $signupAll = $('#sign-up');
-
     var str = /[a-zA-Z]+/;
     var eMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var space =  /^$/;
+
+    $signup = $('.sign-up-group');
+    $signupAll = $('#sign-up');
 
     if(!str.test($ime)) {
         $('#firstName').val('');
@@ -126,14 +121,13 @@ function menu () {
 
 function timer() {
     var date = new Date().getTime();
-    var finalDate = new Date('Sep 11, 2017 12:00:00').getTime();
+    var finalDate = new Date('Apr 4, 2018 12:00:00').getTime();
 
     var tillNext = finalDate - date;
 
     if (tillNext <= 0) {
         $('.timer').hide();
     }else {
-
         var d = Math.floor(tillNext / (1000*60*60*24));
         var h = Math.floor( tillNext % ((1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         var m = Math.floor((tillNext % (1000 * 60 * 60)) / (1000 * 60));
@@ -149,8 +143,6 @@ function timer() {
 function popup() {
     var $image = $('.row img');
     var $popup = $('.popup');
-
-
     $image.on('click', function(e){
         $popup.css('display','block');
         console.log(e.target.src);
@@ -159,9 +151,7 @@ function popup() {
             $popup.fadeOut(600, function(){
                 $(this).children('img').remove();
             });
-
         },2500);
-
     });
 }
 
