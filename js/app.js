@@ -82,7 +82,7 @@ function formValidation() {
     }
 
     if (str.test($ime) && str.test($prezime) && str.test($fax) && eMail.test($mail)) {
-        alert("Uspesno ste se prijavili kao: " + $ime + " " + $prezime);
+        alert("Uspesno ste se prijavili kao: " + $ime + " " + $prezime + " za novu prijavu uradite refresh strane");
         $signupAll.fadeOut(650);
     }else {
         $('body').addClass('failed');
@@ -109,7 +109,6 @@ function menu () {
 
         if ($(this).hasClass('active')){
             $('.menu-items a').on('click', function(e){
-                e.preventDefault();
             	$('.nav-icon').removeClass('active');
                 $('.side-nav').css('right','-200%');
                 active = false;
@@ -308,7 +307,7 @@ function initMap() {
     });
 
     google.maps.event.addListener(Marker, 'click', function() {
-        infowindow.setContent('<p style="color: #333">Kraljice Marije 16</p><p style="color: #333; text-align: center;">Beograd,Palilula</p>');
+        infowindow.setContent('<p style="color: #333; text-align: center">Kraljice Marije 16</p><p style="color: #333; text-align: center;">Beograd,Palilula</p><img src="./img/logo.png" width="100" height="100" style="text-align:center">');
         infowindow.open(map,Marker);
     });
 
